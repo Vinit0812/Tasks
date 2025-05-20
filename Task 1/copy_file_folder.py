@@ -11,14 +11,12 @@ def copy_file_folder(source, destination):
             shutil.copy2(source, destination)
             print(f"File copied from '{source}' to '{destination}'")
         elif os.path.isdir(source):
-            # Ensure destination is removed only if it exists
             if os.path.exists(destination):
                 if os.path.isdir(destination):
                     shutil.rmtree(destination)
                 else:
                     os.remove(destination)
 
-            # ✅ This line must be inside the elif block — ensure it's indented correctly
             shutil.copytree(source, destination)
             print(f"Folder copied from '{source}' to '{destination}'")
     except Exception as e:
