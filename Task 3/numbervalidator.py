@@ -2,8 +2,8 @@ import re
 import sys
 
 def check_number(contact):
-    pattern = r'^[0-9]\d{9}'
-    return re.fullmatch(pattern,contact) is not None
+    pattern = r'^[0-9]\d{9}'# pattern for nmber checking
+    return re.fullmatch(pattern,contact) is not None # check number is matching or not 
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
