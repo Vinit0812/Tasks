@@ -3,12 +3,12 @@ import sys
 
 def write_csv_file(filename):
     data = [
-        ["name", "age"],
+        ["name", "age"], # sample data that will be print in the csv file
         ["vinit", "22"]
     ]
     with open(filename, 'w', newline="") as f:
-        writer = csv.writer(f)
-        writer.writerows(data)
+        writer = csv.writer(f) # write the content inside the file
+        writer.writerows(data) 
         print(f"Written to {filename}")
 
 if __name__ == "__main__":

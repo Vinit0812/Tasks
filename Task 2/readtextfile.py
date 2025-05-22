@@ -1,8 +1,8 @@
 import sys
 
 def read_file(fname):
-    with open(fname,'r') as f:
-        data = f.read()
+    with open(fname,'r') as f: #open the text file
+        data = f.read() # read the content inside the file
         f = print(data)
 
 if __name__ == '__main__':
