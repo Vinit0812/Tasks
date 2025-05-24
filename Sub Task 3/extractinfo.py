@@ -8,12 +8,17 @@ print("abn",abn.group(1))
 email = re.search(r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]+', text)
 print("email",email.group(0))
 
-amount_due = re.search(r'amountdue[a-z]*:?(\d+\.\d)', text)
+amount_due = re.search(r'amountdue(\d+\.\d)', text)
 print("amountdue",amount_due.group(1))
 
-amount_paid = re.search(r'amountpaid[a-z]*:?(\d+\.\d)', text)
+amount_paid = re.search(r'amountpaid(\d+\.\d)', text)
 print("amountdue",amount_paid.group(1))
 
-invoice_date = re.search(r'invoicedate[:]?(a-zA-Z0-9)', text)
-print("invoice_date",invoice_date.group(1))
+due_date = re.search(r'duedate(\d{1,2}[a-z]+[0-9]{4})', text)
+print("duedate",due_date.group(1))
 
+invoice_date = re.search(r'invoicedate(\d{1,2}[a-z]+[0-9]{4})',text)
+print("invoicedate",invoice_date.group(1))
+
+invoice_number = re.search(r'invoicenumber((inv[-]\d+))',text)
+print("invoicenumber",invoice_number.group(1))
